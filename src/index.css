@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+
+/* Atkinson Hyperlegible was designed by the Braille Institute for low-vision readers. */
+@theme {
+  --font-sans: 'Atkinson Hyperlegible', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'Atkinson Hyperlegible Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --color-page: #eef1f8;
+  --color-ink: #101428;
+  --color-mute: #4b5270;
+  --color-line: #d5daea;
+  --color-stage: #0d1230;
+  --color-curve: #ffc857;
+  --color-cursor: #5eead4;
+  --color-root: #ff7a96;
+  --color-peak: #b9a8ff;
+  --color-action: #2630e8;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.55;
+}
+@layer base {
+  button, input, select { font: inherit; color: inherit; }
+}
+
+:focus-visible { outline: 3px solid var(--color-action); outline-offset: 3px; border-radius: 6px; }
+.stage-focus:focus-visible { outline: 4px solid var(--color-cursor); outline-offset: 4px; border-radius: 22px; }
+
+kbd {
+  display: inline-block;
+  min-width: 1.8em;
+  padding: 0 0.45em;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85em;
+  border: 2px solid var(--color-ink);
+  border-bottom-width: 4px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.katex-display { margin: 0.3em 0; overflow-x: auto; overflow-y: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
